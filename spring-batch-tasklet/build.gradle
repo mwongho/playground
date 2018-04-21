@@ -1,0 +1,45 @@
+buildscript {
+    repositories {
+	    maven {
+	        url 'http://central.maven.org/maven2/'
+	    }
+
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'spring-batch-sample'
+    version =  '0.1.0'
+}
+
+repositories {
+	    maven {
+	        url 'http://central.maven.org/maven2/'
+	    }
+
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	compile("org.apache.commons:commons-lang3:3.7")
+	compile("com.opencsv:opencsv:4.1")
+    compile("org.springframework.boot:spring-boot-starter-batch")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.hsqldb:hsqldb")
+    
+    compileOnly('org.projectlombok:lombok')
+    
+    testCompile("junit:junit")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}

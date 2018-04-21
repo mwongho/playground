@@ -1,0 +1,14 @@
+<configuration>
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml" />-->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %-40.40logger{39}| %msg%n</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+    <logger name="za.co.mwongho" level="DEBUG" />
+    <logger name="org.springframework" level="INFO" />
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>
